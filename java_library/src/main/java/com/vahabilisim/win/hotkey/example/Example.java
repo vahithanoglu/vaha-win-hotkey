@@ -19,15 +19,18 @@ public class Example {
     private static void createExampleHotKey(String frameTitle, Hotkey.KeyCombination... kc) {
         final JFrame frame = new JFrame(frameTitle);
         final Dimension dim = new Dimension(400, 300);
-        frame.setSize(dim);
-        frame.setMinimumSize(dim);
-        frame.setMaximumSize(dim);
-        frame.setPreferredSize(dim);
-        frame.setResizable(false);
-        frame.setAlwaysOnTop(true);
-        frame.setLocationByPlatform(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
+
+        SwingUtilities.invokeLater(() -> {
+            frame.setSize(dim);
+            frame.setMinimumSize(dim);
+            frame.setMaximumSize(dim);
+            frame.setPreferredSize(dim);
+            frame.setResizable(false);
+            frame.setAlwaysOnTop(true);
+            frame.setLocationByPlatform(true);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setVisible(true);
+        });
 
         HotkeyFactory.createHotkey(() -> {
             SwingUtilities.invokeLater(() -> {
@@ -35,5 +38,4 @@ public class Example {
             });
         }, kc);
     }
-
 }
