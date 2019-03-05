@@ -16,12 +16,6 @@
 
 #include <Windows.h>
 #include <jni.h>
-//#include <comdef.h>
-//#include <jawt.h>
-//#include <jawt_md.h>
-//#include <excpt.h>
-
-// TODO: reference additional headers your program requires here
 
 //{{AFX_INSERT_LOCATION}}
 // Microsoft Visual C++ will insert additional declarations immediately before the previous line.
